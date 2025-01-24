@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insertion Sort - algorism.</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo-text">algorism. </a>
+
+      <nav>
+        <button class="bubble-btn">
+          Bubble Sort
+        </button>
+        <button class="selection-btn">
+          Selection Sort
+        </button>
+        <button class="quick-btn">
+          Quick Sort
+        </button>
+        <button class="merge-btn">
+          Merge Sort
+        </button>
+      </nav>
+    </header>
+    <div class="main-container">
+      <h1 class="heading">Insertion Sort</h1>
+
+      <div class="controls">
+        <button class="generate-array-btn">Generate Array</button>
+        <div class="array-container" id="array-container"></div>
+
+        <div class="speed-container">
+            <label for="speed">Speed: (max to min)</label>
+            <input type="range" min="0" max="300" value="0" name="speed" id="speed" />
+          </div>
+
+          <button class="insertion-sort-btn">Sort</button>
+      </div>
+
+      <div class="main-area">
+        <div class="blocks-container">
+          <div class="blocks"></div>
+        </div>
+
+        <div class="algo-container">
+          <div class="card">
+            <div class="header-card">
+              <div class="top">
+                <div class="circle">
+                  <span class="red circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="yellow circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="green circle2"></span>
+                </div>
+                <div class="title">
+                  <p id="title2">Insertion Sort</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="code-result-container">
+                <div class="code-container">
+
+                    <p class="algo">
+                      void insertionSort(int[] array) {<br/>
+                        &emsp;int n = array.length;<br/>
+
+                        &emsp;<span class="comment">// Iterate through the array</span></br>
+                        &emsp;<span class="line1">for (int i = 1; i < n; i++)</span> {<br/>
+                          &emsp;&emsp;<span class="comment">// Store the current element as the key</span></br>
+                          &emsp;&emsp;int key = array[i];<br/>
+                          &emsp;&emsp;int j = i - 1;<br/>
+                          &emsp;&emsp;<span class="comment">// Move elements that are greater than key one position ahead</span></br>
+                          &emsp;&emsp;<span class="line2">while (j >= 0 && array[j] > key)</span> {<br/>
+                            &emsp;&emsp;&emsp;<span class="line3">array[j + 1] = array[j];</span><br/>
+                            &emsp;&emsp;&emsp;<span class="line4">j--;</span><br/>
+                            &emsp;&emsp;}<br/>
+                            &emsp;&emsp;<span class="comment">// Place the key at the correct position</span></br>
+                            &emsp;&emsp;<span class="line4">array[j + 1] = key;</span><br/>
+                            &emsp;}<br/>
+                    }<br/>
+                    </p>
+                </div>
+
+                
+                    <div class="result-container">
+                        <p class="output-text">
+Result will be displayed here.
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1>More about Insertion Sort:</h1>
+      <p>
+        Insertion Sort is a simple and intuitive sorting algorithm used to sort an array by building the sorted portion of the array one element at a time. At each step, it inserts the current element into its correct position in the already sorted portion.
+      </p>
+      
+      <ul>
+        <li>Key Features
+          <ol>
+            <li>Simple and Easy to Implement: Insertion Sort is beginner-friendly and follows a step-by-step approach to sorting.</li>
+            <li>In-Place Sorting: The algorithm does not require additional memory, making it space-efficient.</li>
+            <li>Stable Sorting: It maintains the relative order of equal elements, making it suitable for applications where stability is required.</li>
+            <li>Efficient for Small or Nearly Sorted Arrays: It performs well for small datasets or arrays that are already partially sorted.</li>
+          </ol>
+        </li>
+        <li>Time Complexity
+          <ul>
+            <li>Best Case: O(n) - When the array is already sorted.</li>
+            <li>Average Case: O(n<sup>2</sup>).</li>
+            <li>Worst Case: O(n<sup>2</sup>) - When the array is sorted in reverse order.</li>
+          </ul>
+        </li>
+        <li>Space Complexity: O(1)</li>
+        <li>Algorithm Steps
+          <ol>
+            <li>Start with the Second Element: Assume the first element is already sorted.</li>
+            <li>Select the Key Element: Take the current element as the key and compare it with elements in the sorted portion.</li>
+            <li>Shift Elements: Move all elements greater than the key one position to the right.</li>
+            <li>Insert the Key: Place the key in its correct position in the sorted portion.</li>
+            <li>Repeat: Move to the next element and repeat the process until the entire array is sorted.</li>
+          </ol>
+        </li>
+      </ul>
+      
+    </div>
+
+
+    <hr>
+    <footer>
+        <p class="footer">Made with ❤️ by Yuvraj Patil</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

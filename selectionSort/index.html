@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection Sort - algorism.</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo-text">algorism. </a>
+
+      <nav>
+        <button class="bubble-btn">
+          Bubble Sort
+        </button>
+        <button class="insertion-btn">
+          Insertion Sort
+        </button>
+        <button class="quick-btn">
+          Quick Sort
+        </button>
+        <button class="merge-btn">
+          Merge Sort
+        </button>
+      </nav>
+    </header>
+    <div class="main-container">
+      <h1 class="heading">Selection Sort</h1>
+
+      <div class="controls">
+        <button class="generate-array-btn">Generate Array</button>
+        <div class="array-container" id="array-container"></div>
+
+        <div class="speed-container">
+            <label for="speed">Speed: (max to min)</label>
+            <input type="range" min="0" max="300" value="0" name="speed" id="speed" />
+          </div>
+
+          <button class="selection-sort-btn">Sort</button>
+      </div>
+
+      <div class="main-area">
+        <div class="blocks-container">
+          <div class="blocks"></div>
+        </div>
+
+        <div class="algo-container">
+          <div class="card">
+            <div class="header-card">
+              <div class="top">
+                <div class="circle">
+                  <span class="red circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="yellow circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="green circle2"></span>
+                </div>
+                <div class="title">
+                  <p id="title2">Selection Sort</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="code-result-container">
+                <div class="code-container">
+
+                    <p class="algo">
+                      void selectionSort(int[] arr) { </br>
+                        &emsp;int n = arr.length; </br>
+                
+                        &emsp;<span class="comment">// Traverse through all array elements</span></br>
+                        &emsp;<span class="line1">for (int i = 0; i < n - 1; i++)</span> {</br>
+                          &emsp;&emsp;<span class="comment">// Finding minimum element in the unsorted part</span></br>
+                          &emsp;&emsp;int minIndex = i;</br>
+                          &emsp;&emsp;<span class="line2">for (int j = i + 1; j < n; j++)</span> {</br>
+                            &emsp;&emsp;&emsp;<span class="line3">if (arr[j] < arr[minIndex])</span> {</br>
+                              &emsp;&emsp;&emsp;&emsp;<span class="line4">minIndex = j;</span></br>
+                              &emsp;&emsp;&emsp;}</br>
+                              &emsp;&emsp;}</br>
+                              &emsp;&emsp;<span class="line5">int temp = arr[minIndex];</span></br>
+                              &emsp;&emsp;<span class="line6">arr[minIndex] = arr[i];</span></br>
+                              &emsp;&emsp;<span class="line7">arr[i] = temp;</span></br>
+                              &emsp;&emsp;}</br>
+                              }</br>
+                    </p>
+                </div>
+
+                
+                    <div class="result-container">
+                        <p class="output-text">
+Result will be displayed here.
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+        <h1>More about Selection Sort:</h1>
+        <p>
+          Selection Sort is a straightforward and intuitive sorting algorithm used to sort an array by repeatedly selecting the smallest (or largest) element from the unsorted part and moving it to its correct position in the sorted part.
+        </p>
+
+        <ul>
+          <li>Key Features
+            <ol>
+              <li>Simple and Easy to Implement: Selection Sort is a beginner-friendly algorithm with a straightforward approach to sorting.</li>
+              <li>In-Place Sorting: The algorithm operates directly on the input array without requiring additional memory, making it space-efficient.</li>
+              <li>Comparison-Based Algorithm: It compares elements to find the smallest (or largest) element during each iteration.</li>
+            </ol>
+          </li>
+          <li>Time Complexity
+            <ul>
+              <li>Best Case, Average Case, and Worst Case: 
+                O(n^2).</li>
+                <li>The nested loops ensure the algorithm always performs 
+                  𝑛
+                  ×
+                  (
+                  𝑛
+                  −
+                  1
+                  )
+                  /
+                  2
+                  n×(n−1)/2 comparisons, regardless of the input.</li>
+            </ul>
+          </li>
+          <li>Space Complexity: O(1)</li>
+          <li>Algorithm Steps
+            <ol>
+              <li>Initialize the Unsorted Part: Start with the entire array as the unsorted portion.</li>
+              <li>Find the Minimum Element: For each element in the unsorted portion, iterate through the remaining elements to find the smallest value.</li>
+              <li>Swap the Minimum with the First Unsorted Element: Place the smallest element at the beginning of the unsorted part to expand the sorted portion.</li>
+              <li>Repeat the Process: Move to the next position and repeat the process for the remaining unsorted portion of the array.</li>
+              <li>Stop When All Elements Are Sorted: When the entire array is sorted, the algorithm terminates.</li>
+            </ol>
+          </li>
+        </ul>
+    </div>
+
+
+    <hr>
+    <footer>
+        <p class="footer">Made with ❤️ by Yuvraj Patil</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

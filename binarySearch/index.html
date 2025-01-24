@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Search - algorism.</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo-text">algorism. </a>
+
+      <nav>
+        <button class="linear-btn">
+          Linear Search
+        </button>
+      </nav>
+    </header>
+    <div class="main-container">
+      <h1 class="heading">Binary Search</h1>
+
+      <div class="controls">
+        <button class="generate-array-btn">Generate Array</button>
+        <div class="array-container" id="array-container"></div>
+
+        <div>
+            <label class="label-for-input" for="search-input">Enter a number to be searched: </label>
+            <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            placeholder="eg. 10"
+            />
+        </div>
+
+        <div class="speed-container">
+            <label for="speed">Speed: (max to min)</label>
+            <input type="range" min="0" max="700" value="0" name="speed" id="speed" />
+          </div>
+
+          <button class="binary-search-btn">Search</button>
+      </div>
+
+      <div class="main-area">
+        <div class="blocks-container">
+          <div class="blocks"></div>
+        </div>
+
+        <div class="algo-container">
+          <div class="card">
+            <div class="header-card">
+              <div class="top">
+                <div class="circle">
+                  <span class="red circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="yellow circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="green circle2"></span>
+                </div>
+                <div class="title">
+                  <p id="title2">Binary Search</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="code-result-container">
+                <div class="code-container">
+
+                    <p class="algo">
+                        int binarySearch(int[] arr, int target) { <br/>
+                            &emsp;int left = 0;<br/>
+                            &emsp;int right = arr.length - 1;<br/>
+                            &emsp;<span class="line1">while (left <b= right) </span>{<br/>
+                                &emsp;&emsp;<span class="line2">int mid = left + (right - left) / 2; <span class="comment">// Find the middle element</span><br/>
+                                <span class="comment">// Check if the target is at the middle</span></br>
+                                &emsp;&emsp;&emsp;<span class="line3">if (arr[mid] == target) </span>{<br/>
+                                    &emsp;&emsp;&emsp;&emsp;<span class="line4">    return mid;</span><br/>
+                                    &emsp;&emsp;&emsp;}<br/>
+                                    <span class="comment"></span>
+                                    &emsp;&emsp;&emsp;<span class="line5">else if (arr[mid] < target)</span> {<br/>
+                                        &emsp;&emsp;&emsp;&emsp;    <span class="line6">left = mid + 1;</span><br/>
+                                        &emsp;&emsp;&emsp;}<br/>
+                                        <span class="comment">// If target is larger than mid, ignore the left half</span>
+                                        &emsp;&emsp;&emsp;else {<br/>
+                                            &emsp;&emsp;&emsp;&emsp;<span class="line7">right = mid - 1;</span><br/>
+                                            &emsp;&emsp;&emsp;}<br/>
+                                            &emsp;&emsp;}<br/>
+                                            &emsp;&emsp;<span class="line8">return -1; <span class="comment">// Return -1 if the target is not found</span><br/>
+                        }<br/>
+                    </p>
+                </div>
+
+                
+                    <div class="result-container">
+                        <p class="output-text">
+Result will be displayed here.
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+        <h1>More about Binary Search:</h1>
+
+        <ul>
+          <li>Binary Search is a highly efficient algorithm for searching a key element in a sorted array. It works by repeatedly dividing the array into two halves and checking whether the target element lies in the left or right half, drastically reducing the search space.</li>
+          <li>Key Features:
+            <ol>
+              <li>Sorted Array Requirement: 
+                The array must be sorted for the binary search algorithm to work.</li>
+              <li>Divide-and-Conquer Strategy:
+                The search range is halved at every step, improving efficiency.</li>
+
+              </ol>
+              <li>
+                Time Complexity:
+                <ul>
+                  <li>Best Case: 
+                    O(1) (target found at the middle in the first step).</li>
+                <li>Worst Case: 
+                  O(logn) (dividing the search space until one element remains).</li>
+              </ul>
+              </li>
+              <li>Space Complexity:
+                <ul>
+            <li>
+                    Iterative Approach: 
+                    O(1).</li>
+                  <li>Recursive Approach:
+                    O(log n) (due to stack calls).</li>
+                </ul>
+              </li>
+              <li>Algorithm Steps:
+                <ol>
+                  <li>Set two pointers:
+                    low (starting index) and high (last index of the array).</li>
+                  <li>
+                    Compute the middle index:
+                    Compare the target element with the middle element:
+                  </li>
+                  <li>If equal: Return the middle index (element found).</li>
+                  <li>If target is smaller: Focus on the left half (high = middle - 1).</li>
+                  <li>If target is larger: Focus on the right half (low = middle + 1).</li>
+                  <li>Repeat the process until:
+            
+                    The target is found, or
+                    The low pointer exceeds high, meaning the target is not in the array.</li>
+                </ol>
+              </li>
+            
+        </ul>
+
+    </div>
+
+
+    <hr>
+    <footer>
+        <p class="footer">Made with ❤️ by Yuvraj Patil</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

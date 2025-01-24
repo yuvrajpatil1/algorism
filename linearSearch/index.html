@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Search - algorism.</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo-text">algorism. </a>
+
+      <nav>
+        <button class="binary-btn">
+          Binary Search
+        </button>
+      </nav>
+    </header>
+    <div class="main-container">
+      <h1 class="heading">Linear Search</h1>
+
+      <div class="controls">
+        <button class="generate-array-btn">Generate Array</button>
+        <div class="array-container" id="array-container"></div>
+
+        <div>
+            <label class="label-for-input" for="search-input">Enter a number to be searched: </label>
+            <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            placeholder="eg. 10"
+            />
+        </div>
+
+        <div class="speed-container">
+            <label for="speed">Speed: (max to min)</label>
+            <input type="range" min="0" max="300" value="0" name="speed" id="speed" />
+          </div>
+
+          <button class="linear-search-btn">Search</button>
+      </div>
+
+      <div class="main-area">
+        <div class="blocks-container">
+          <div class="blocks"></div>
+        </div>
+
+        <div class="algo-container">
+          <div class="card">
+            <div class="header-card">
+              <div class="top">
+                <div class="circle">
+                  <span class="red circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="yellow circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="green circle2"></span>
+                </div>
+                <div class="title">
+                  <p id="title2">Linear Search</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="code-result-container">
+                <div class="code-container">
+
+                    <p class="algo">
+                        int linearSearch(int[] array, int target) { <br/>
+                            &emsp; <span class="line1">for (int i = 0; i < array.length; i++)</span>{ <br/>
+                                &emsp;&emsp;&emsp;<span class="line2">if (array[i] == target)</span> {<br/>
+                                &emsp;&emsp;&emsp;<span class="line3">return i;</span> <span class="comment">// Return the index if the element is found</span> <br/>
+                                &emsp;&emsp; &emsp;}<br/>
+                                &emsp;&emsp;}<br/>
+                                &emsp;&emsp;<span class="line4">return -1;</span> <span class="comment">// Return -1 if the element is not found</span><br/>
+                        }<br/>
+                    </p>
+                </div>
+
+                
+                    <div class="result-container">
+                        <p class="output-text">
+Result will be displayed here.
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+        <h1>More about Linear Search:</h1>
+        <p>
+            Linear search is a simple search algorithm used to find a specific element in a list or array. It works by checking each element in the list, one by one, from the beginning to the end, until the desired element is found or the entire list has been checked. Here's a detailed, pointwise explanation:
+        </p>
+
+        <ul>
+            <li><b>Definition:</b> Linear search is a sequential search algorithm that looks for a target value by checking each element in the list in order, starting from the first element.</li>
+            <li><b>Working:</b> The algorithm compares the target value with each element in the list. If the target is found, the index of the element is returned. If the target is not found after checking all elements, it returns a special value indicating that the target is not present (e.g., -1).</li>
+            <li><b>Best Case:</b> The best-case scenario occurs when the target element is found at the very first position of the list. In this case, the algorithm only needs to perform one comparison, making it very efficient.</li>
+            <li><b>Worst Case:</b> The worst-case scenario occurs when the target element is either not in the list or is located at the very last position. In this case, the algorithm needs to check every element in the list, leading to a time complexity of O(n).</li>
+            <li><b>Time Complexity:</b> The time complexity of linear search is O(n), where n is the number of elements in the list. This means the search time grows linearly with the size of the list.</li>
+            <li><b>Space Complexity:</b> The space complexity of linear search is O(1), as it does not require additional memory other than a few variables to store the current index and target value.</li>
+            <li><b>No Sorting Required:</b> Unlike binary search, linear search does not require the list to be sorted. It works on both sorted and unsorted data, making it a versatile but slower option.</li>
+            <li>
+                <b>Use Cases:</b> Linear search is best used when:
+                <ul>
+                  <li>The list is small.
+                  </li>
+              <li>The list is unsorted, or you cannot afford the overhead of sorting.
+                  </li>
+              <li>The search operation is not performed frequently.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <hr>
+    <footer>
+        <p class="footer">Made with ❤️ by Yuvraj Patil</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

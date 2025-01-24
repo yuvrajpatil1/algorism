@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge Sort - algorism.</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo-text">algorism. </a>
+
+      <nav>
+        <button class="bubble-btn">
+          Bubble Sort
+        </button>
+        <button class="selection-btn">
+          Selection Sort
+        </button>
+        <button class="insertion-btn">
+          Insertion Sort
+        </button>
+        <button class="quick-btn">
+          Quick Sort
+        </button>
+      </nav>
+    </header>
+    <div class="main-container">
+      <h1 class="heading">Merge Sort</h1>
+
+      <div class="controls">
+        <button class="generate-array-btn">Generate Array</button>
+        <div class="array-container" id="array-container"></div>
+
+        <div class="speed-container">
+            <label for="speed">Speed: (max to min)</label>
+            <input type="range" min="0" max="300" value="0" name="speed" id="speed" />
+          </div>
+
+          <button class="merge-sort-btn">Sort</button>
+      </div>
+
+      <div class="main-area">
+        <div class="blocks-container">
+          <div class="blocks"></div>
+        </div>
+
+        <div class="algo-container">
+          <div class="card">
+            <div class="header-card">
+              <div class="top">
+                <div class="circle">
+                  <span class="red circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="yellow circle2"></span>
+                </div>
+                <div class="circle">
+                  <span class="green circle2"></span>
+                </div>
+                <div class="title">
+                  <p id="title2">Merge Sort</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="code-result-container">
+                <div class="code-container">
+
+                    <p class="algo">
+                      void mergeSort(int[] array) {</br>
+                        &emsp;if (array.length < 2) {</br>
+                            &emsp;&emsp;return;</br>
+                        &emsp;}</br>
+                        &emsp;<span class="comment">// Find the midpoint of the array</span></br>
+                        &emsp;int mid = array.length / 2;</br>
+                        
+                        &emsp;<span class="comment">// Split the array into two halves</span></br>
+                        &emsp;int[] left = Arrays.copyOfRange(array, 0, mid);</br>
+                        &emsp;int[] right = Arrays.copyOfRange(array, mid, array.length);</br>
+                        
+                        &emsp;<span class="comment">// Recursively sort each half</span></br>
+                        &emsp;mergeSort(left);</br>
+                        &emsp;mergeSort(right);</br>
+                        
+                        &emsp;<span class="comment">// Merge the sorted halves</span></br>
+                        &emsp;merge(array, left, right);</br>
+                    }</br></br>
+                
+                    <span class="comment">// Function to merge two sorted subarrays</span></br>
+                    void merge(int[] array, int[] left, int[] right) {</br>
+                        &emsp;int i = 0, j = 0, k = 0;</br>
+                        
+                        &emsp;<span class="comment">// Compare elements from both subarrays and merge them</span></br>
+                        &emsp;while (i < left.length && j < right.length) {</br>
+                            &emsp;&emsp;if (left[i] <= right[j]) {</br>
+                                &emsp;&emsp;&emsp;array[k++] = left[i++];</br>
+                            &emsp;&emsp;} else {</br>
+                                &emsp;&emsp;&emsp;array[k++] = right[j++];</br>
+                            &emsp;&emsp;}</br>
+                        &emsp;}</br>
+                        
+                        &emsp;<span class="comment">// Copy remaining elements of the left subarray (if any)</span></br>
+                        &emsp;while (i < left.length) {</br>
+                            &emsp;&emsp;array[k++] = left[i++];</br>
+                        &emsp;}</br>
+                        
+                        &emsp;<span class="comment">// Copy remaining elements of the right subarray (if any)</span></br>
+                        &emsp;while (j < right.length) {</br>
+                            &emsp;&emsp;array[k++] = right[j++];</br>
+                        &emsp;}</br>
+                    }</br>
+                
+                    </p>
+                </div>
+
+                
+                    <div class="result-container">
+                        <p class="output-text">
+Result will be displayed here.
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <h1>More about Merge Sort:</h1>
+  <p>
+    Merge Sort is a highly efficient, comparison-based sorting algorithm that uses the divide-and-conquer approach. It divides the input array into smaller subarrays, sorts them, and then merges them back together in sorted order.
+  </p>
+  
+  <ul>
+    <li>Key Features
+      <ol>
+        <li>Divide and Conquer: Merge Sort recursively divides the array into smaller subarrays and sorts them individually.</li>
+        <li>Stable Sorting: It maintains the relative order of equal elements, ensuring stability.</li>
+        <li>Suitable for Linked Lists: Merge Sort works efficiently with linked lists as no shifting of elements is required.</li>
+        <li>Efficient for Large Datasets: It performs well for large datasets due to its consistent time complexity.</li>
+        <li>Out-of-Place Sorting: It requires additional memory for the merging process, making it less space-efficient than in-place algorithms.</li>
+      </ol>
+    </li>
+    <li>Time Complexity
+      <ul>
+        <li>Best Case: O(n log n).</li>
+        <li>Average Case: O(n log n).</li>
+        <li>Worst Case: O(n log n) - Consistent for all input scenarios due to the divide-and-conquer approach.</li>
+      </ul>
+    </li>
+    <li>Space Complexity: O(n) - Requires extra memory for temporary arrays during merging.</li>
+    <li>Algorithm Steps
+      <ol>
+        <li>Divide the Array: Split the input array into two halves recursively until each subarray contains only one element.</li>
+        <li>Sort the Subarrays: Sort each half of the array individually (base case: arrays with one element are inherently sorted).</li>
+        <li>Merge the Sorted Subarrays: Compare elements from the left and right subarrays and merge them into a single sorted array.</li>
+        <li>Repeat for Larger Subarrays: Continue merging sorted subarrays until the entire array is sorted.</li>
+        <li>Stop When All Subarrays Are Merged: The algorithm terminates when the full array is sorted and merged.</li>
+      </ol>
+    </li>
+  </ul>
+  
+        
+      </div>
+    </div>
+
+
+
+    <hr>
+    <footer>
+        <p class="footer">Made with ❤️ by Yuvraj Patil</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
