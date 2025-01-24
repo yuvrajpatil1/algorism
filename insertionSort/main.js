@@ -156,7 +156,7 @@ async function insertionSort() {
 
 generateArrayBtn.addEventListener("click", () => {
   generateArray();
-  outputText.textContent = ""; // Clear output text
+  outputText.textContent = "";
 });
 
 insertionSortBtn.addEventListener("click", () => {

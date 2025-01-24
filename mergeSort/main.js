@@ -174,13 +174,12 @@ async function startMergeSort() {
 
   await mergeSort(generatedArray, 0, generatedArray.length - 1);
 
-  // Turn all bars and values green after sorting
   for (let k = 0; k < bars.length; k++) {
     bars[k].style.backgroundColor = "green";
     barValues[k].style.backgroundColor = "green";
   }
 
-  // Remove any remaining blinking styles
+  
   // line1.classList.remove("blink");
   // line2.classList.remove("blink");
   // line3.classList.remove("blink");
@@ -197,7 +196,7 @@ async function startMergeSort() {
 
 generateArrayBtn.addEventListener("click", () => {
   generateArray();
-  outputText.textContent = ""; // Clear output text
+  outputText.textContent = "";
 });
 
 mergeSortBtn.addEventListener("click", () => {

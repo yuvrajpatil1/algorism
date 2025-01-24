@@ -190,8 +190,8 @@ button {
   font-size: 12px;
   font-weight: bold;
   color: #333;
-  border: 1px solid #333; /* 1px border around value block */
-  background-color: #fff; /* White background for the value block */
+  border: 1px solid #333;
+  background-color: #fff; 
 }
 
 .blocks-container {
@@ -331,13 +331,13 @@ button {
 }
 
 ul, ol {
-  margin: 0;         /* Reset margin */
-  padding-left: 20px; /* Indent nested lists */
+  margin: 0;        
+  padding-left: 20px;
 }
 
 li {
-  list-style-position: outside; /* Ensure bullets appear outside the text */
-  display: list-item;           /* Ensure proper list-item display */
+  list-style-position: outside;
+  display: list-item;           
 }
 
 .info {
