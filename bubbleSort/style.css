@@ -279,6 +279,9 @@ button {
   color: #e0e1dd;
   border: 2px solid white;
 }
+.generate-array-btn.active{
+  cursor: not-allowed;
+}
 
 .bar {
   width: 25px;
